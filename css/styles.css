@@ -495,7 +495,7 @@ p  { max-width: 66ch; }
 .tz-separator {
   font-family: var(--font-mono);
   font-size: 1.2rem;
-  color: var(--border);
+  color: var(--text-muted);
   align-self: center;
 }
 
