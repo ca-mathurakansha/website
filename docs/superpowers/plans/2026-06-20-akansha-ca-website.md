@@ -1970,7 +1970,7 @@ git add index.html services.html contact.html controls-sox.html css/styles.css &
 | Mobile responsive | Tasks 2, 5, 9 |
 | Keyboard accessible, visible focus | Tasks 1, 9 |
 | prefers-reduced-motion | Tasks 1, 9 |
-| Bricolage Grotesque + Instrument Sans | Task 1 |
+| Fraunces + Plus Jakarta Sans + JetBrains Mono | Task 1 |
 | Teal + clay + warm off-white palette | Task 1 |
 | No prices anywhere | Tasks 6, 7 |
 | No Xero badge | Not added |
