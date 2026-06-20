@@ -260,3 +260,81 @@ p  { max-width: 66ch; }
   .nav__burger { display: flex; }
   .nav__links a { font-size: 1.25rem; }
 }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  padding-block: var(--sp-12) var(--sp-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+/* Availability pill: mono, outlined, no rounded pill shape */
+.hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 3px;
+}
+.hero__pill::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* Fraunces italic at display size — the defining typographic move */
+.hero__name {
+  font-style: italic;
+  margin-bottom: var(--sp-2);
+  font-weight: 700;
+}
+
+/* Qualification line in mono — signals precision, not marketing */
+.hero__qual {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--sp-6);
+  line-height: 1.6;
+}
+
+.hero__value {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--text);
+  font-weight: 400;
+  max-width: 54ch;
+  margin-bottom: var(--sp-6);
+  line-height: 1.65;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+.profile {
+  border-top: 2px solid var(--primary);
+  padding-top: var(--sp-4);
+}
+
+.profile p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
