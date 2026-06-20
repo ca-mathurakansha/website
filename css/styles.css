@@ -524,8 +524,6 @@ p  { max-width: 66ch; }
   border-bottom: 1px solid var(--border);
 }
 
-.service-entry:last-of-type { border-bottom: none; }
-
 .service-entry__number {
   font-size: 0.75rem;
   font-weight: 700;
@@ -864,12 +862,6 @@ p  { max-width: 66ch; }
     align-items: flex-start;
     gap: var(--sp-2);
   }
-  .tz-bridge {
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-  }
-  .tz-bridge__line { flex: 1; width: auto; }
 }
 
 /* =========================================================
