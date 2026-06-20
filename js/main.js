@@ -21,3 +21,15 @@ function initNav() {
 document.addEventListener('DOMContentLoaded', initNav);
 
 // Contact form handler: Task 8
+function handleContactForm(e) {
+  e.preventDefault();
+  var name    = document.getElementById('contact-name').value.trim();
+  var email   = document.getElementById('contact-email').value.trim();
+  var message = document.getElementById('contact-message').value.trim();
+
+  var to      = '[email]';
+  var subject = encodeURIComponent('Enquiry from ' + name);
+  var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+
+  window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+}
