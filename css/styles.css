@@ -550,3 +550,107 @@ p  { max-width: 66ch; }
   border: 1px solid #EDD9C8;
   margin-block: var(--sp-4);
 }
+
+/* =========================================================
+   CONTROLS & SOX PAGE
+   ========================================================= */
+.sox-hero {
+  padding-block: var(--sp-8);
+  border-bottom: 1px solid var(--border);
+}
+
+.sox-hero p:not(.section-label) {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-top: var(--sp-2);
+}
+
+.sox-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.sox-breadcrumb a { color: var(--primary); }
+
+.sox-intro {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  margin-block: var(--sp-6);
+}
+
+.sox-intro p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.sox-regimes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-block: var(--sp-6);
+}
+
+@media (max-width: 720px) {
+  .sox-regimes { grid-template-columns: 1fr; }
+}
+
+.sox-regime {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-4) var(--sp-6);
+  background: var(--surface);
+}
+
+.sox-regime--b {
+  border-color: #EDD9C8;
+  background: #FDF8F5;
+}
+
+.sox-regime__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--r-sm);
+  padding: 0.2rem 0.55rem;
+  margin-bottom: var(--sp-2);
+}
+
+.sox-regime--b .sox-regime__tag { background: var(--accent); }
+
+.sox-regime h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--sp-3);
+}
+
+.sox-regime p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--sp-2);
+}
+
+.sox-regime ul {
+  margin: var(--sp-2) 0 0 var(--sp-3);
+}
+
+.sox-regime li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.sox-honesty-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-left: 3px solid var(--border);
+  padding-left: var(--sp-2);
+  margin-top: var(--sp-3);
+  line-height: 1.6;
+}
