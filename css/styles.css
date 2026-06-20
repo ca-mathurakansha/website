@@ -695,6 +695,7 @@ p  { max-width: 66ch; }
   border-radius: var(--r-md);
   padding: var(--sp-3) var(--sp-4);
   transition: border-color 0.18s, box-shadow 0.18s;
+  min-height: 44px;
 }
 .contact-method:hover,
 .contact-method:focus-visible {
