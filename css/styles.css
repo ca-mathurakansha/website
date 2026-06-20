@@ -421,3 +421,86 @@ p  { max-width: 66ch; }
 
 .step h3 { margin-bottom: var(--sp-1); font-size: 1.05rem; }
 .step p  { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+/* =========================================================
+   TRUST STRIP — stat callout style, not icon chips
+   ========================================================= */
+.trust-strip {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--sp-8);
+}
+
+.trust-strip__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--sp-6) var(--sp-4);
+}
+
+.trust-item__stat {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.trust-item__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.trust-item__value {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TIMEZONE VISUAL — typographic, no decorative chrome
+   ========================================================= */
+.timezone-section { padding-block: var(--sp-8); }
+
+.timezone-visual {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.tz-block__time {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.tz-block__loc {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.tz-separator {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--border);
+  align-self: center;
+}
+
+.timezone-caption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--sp-3);
+}
