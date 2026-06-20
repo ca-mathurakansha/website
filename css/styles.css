@@ -792,3 +792,96 @@ p  { max-width: 66ch; }
   margin-top: var(--sp-2);
   line-height: 1.5;
 }
+
+/* =========================================================
+   SKIP LINK
+   ========================================================= */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-sm);
+  font-weight: 600;
+  z-index: 200;
+  transition: top 0.1s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--sp-6);
+  margin-top: var(--sp-8);
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.footer__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--sp-3);
+  list-style: none;
+}
+
+.footer__links a {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+.footer__links a:hover { color: var(--primary); }
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE FIX-UPS
+   ========================================================= */
+@media (max-width: 480px) {
+  .container { padding-inline: var(--sp-3); }
+  .services-grid { grid-template-columns: 1fr; }
+  .how-it-works  { padding: var(--sp-4); }
+  .timezone-visual {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+  .tz-bridge {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .tz-bridge__line { flex: 1; width: auto; }
+}
+
+/* =========================================================
+   FOCUS & MOBILE POLISH
+   ========================================================= */
+.nav__burger:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .nav__links {
+    overflow-y: auto;
+  }
+}
