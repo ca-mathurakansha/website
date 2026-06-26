@@ -18,7 +18,7 @@
             "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
             "surface-container-highest": "#e0e3e5",
             "on-surface": "#191c1e", "on-surface-variant": "#45474c",
-            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "outline": "#6b6d73", "outline-variant": "#c5c6cd",
             "primary": "#091426", "on-primary": "#ffffff",
             "primary-container": "#1e293b", "on-primary-container": "#8590a6",
             "secondary": "#755a26", "on-secondary": "#ffffff",
@@ -56,6 +56,7 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
     body { -webkit-font-smoothing: antialiased; }
     ::selection { background-color: #fdd897; color: #271900; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
@@ -70,7 +71,7 @@
         <a href="services.html" aria-current="page" class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Services</a>
         <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
       </nav>
-      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+      <button class="md:hidden text-primary p-2.5 -mr-2.5" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -91,11 +92,10 @@
   <main id="main-content">
 
     <!-- Page hero -->
-    <section class="px-5 md:px-margin-desktop pt-stack-xl pb-stack-md border-b-[0.5px] border-outline-variant">
+    <section class="px-5 md:px-margin-desktop pt-stack-xl pb-stack-md">
       <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
         <div class="md:col-span-8">
-          <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-6">Services</p>
-          <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary">What I can do<br class="hidden md:block"/> for your practice.</h1>
+          <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary">Strategic Financial Stewardship.</h1>
         </div>
         <div class="md:col-span-4 pb-2">
           <p class="font-body-lg text-body-lg text-on-surface-variant border-l-[0.5px] border-outline-variant pl-8">
@@ -107,81 +107,90 @@
 
     <!-- Services -->
     <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
+      <div class="h-[0.5px] bg-outline-variant"></div>
 
-      <article id="bookkeeping" class="py-stack-xl border-b-[0.5px] border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          <div class="md:col-span-3">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">01 / Bookkeeping</span>
-            <h2 class="font-headline-md text-headline-md text-primary mt-4">Bookkeeping</h2>
-          </div>
-          <div class="md:col-span-7 md:col-start-5">
-            <p class="font-body-lg text-body-lg text-on-surface mb-6">Day-to-day and monthly bookkeeping kept accurate and up to date. Bank reconciliations, categorisation, ledger maintenance, and clean month-end records ready for review.</p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to firms who want reliable books maintained without adding headcount, and to small businesses who'd rather a qualified CA kept things straight.</p>
-            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
-          </div>
+      <article id="bookkeeping" class="group py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[0.5px] border-outline-variant">
+        <div class="flex-1">
+          <span class="font-label-sm text-label-sm text-outline mb-4 block">01 / CORE</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Bookkeeping</h2>
         </div>
+        <div class="flex-1 md:px-12">
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Day-to-day and monthly bookkeeping kept accurate and up to date. Bank reconciliations, categorisation, ledger maintenance, and clean month-end records ready for your review.</p>
+          <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300">Request a quote →</a>
+        </div>
+        <span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
       </article>
 
-      <article id="vat" class="py-stack-xl border-b-[0.5px] border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          <div class="md:col-span-3">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">02 / Taxation</span>
-            <h2 class="font-headline-md text-headline-md text-primary mt-4">VAT Return Preparation</h2>
-          </div>
-          <div class="md:col-span-7 md:col-start-5">
-            <p class="font-body-lg text-body-lg text-on-surface mb-6">Preparation of VAT returns using MTD-compatible software, ready for your review and submission. Built to fit the UK's Making Tax Digital requirements.</p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to practices that want the prep work handled so their team only has to review and file.</p>
-            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
-          </div>
+      <article id="vat" class="group py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[0.5px] border-outline-variant">
+        <div class="flex-1">
+          <span class="font-label-sm text-label-sm text-outline mb-4 block">02 / TAXATION</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">VAT Advisory</h2>
         </div>
+        <div class="flex-1 md:px-12">
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">MTD-compatible VAT returns prepared and returned for your review and submission. Expert navigation of UK Making Tax Digital requirements to keep your clients compliant.</p>
+          <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300">Request a quote →</a>
+        </div>
+        <span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
       </article>
 
-      <article id="year-end" class="py-stack-xl border-b-[0.5px] border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          <div class="md:col-span-3">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">03 / Reporting</span>
-            <h2 class="font-headline-md text-headline-md text-primary mt-4">Year-End Accounts Preparation</h2>
-          </div>
-          <div class="md:col-span-7 md:col-start-5">
-            <p class="font-body-lg text-body-lg text-on-surface mb-6">Preparation of year-end accounts for sole traders and small companies — from trial balance to a clean set of accounts ready for your review and finalisation.</p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to practices managing seasonal year-end load.</p>
-            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
-          </div>
+      <article id="year-end" class="group py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[0.5px] border-outline-variant">
+        <div class="flex-1">
+          <span class="font-label-sm text-label-sm text-outline mb-4 block">03 / REPORTING</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Year-End Reporting</h2>
         </div>
+        <div class="flex-1 md:px-12">
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">From trial balance to a clean set of accounts for sole traders and small companies, ready for your finalisation. Formal closure of the fiscal year with rigorous audit preparation.</p>
+          <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300">Request a quote →</a>
+        </div>
+        <span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
       </article>
 
-      <article id="management" class="py-stack-xl border-b-[0.5px] border-outline-variant">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          <div class="md:col-span-3">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">04 / Strategy</span>
-            <h2 class="font-headline-md text-headline-md text-primary mt-4">Management Reporting &amp; Payroll Support</h2>
-          </div>
-          <div class="md:col-span-7 md:col-start-5">
-            <p class="font-body-lg text-body-lg text-on-surface mb-6">Monthly management accounts, and payroll support including PAYE, RTI submissions and payslips.</p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to firms and businesses that want regular, reliable reporting they can rely on.</p>
-            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
-          </div>
+      <article id="management" class="group py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[0.5px] border-outline-variant">
+        <div class="flex-1">
+          <span class="font-label-sm text-label-sm text-outline mb-4 block">04 / STRATEGY</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Management Insights</h2>
         </div>
+        <div class="flex-1 md:px-12">
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">Monthly management accounts, PAYE, RTI submissions and payslips — reliable and on time. Dynamic, data-driven reporting that gives you the visibility to make strategic decisions.</p>
+          <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300">Request a quote →</a>
+        </div>
+        <span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
       </article>
 
-      <article id="controls" class="py-stack-xl">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          <div class="md:col-span-3">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">05 / Governance</span>
-            <h2 class="font-headline-md text-headline-md text-primary mt-4">Controls &amp; SOX Support</h2>
-          </div>
-          <div class="md:col-span-7 md:col-start-5">
-            <p class="font-body-lg text-body-lg text-on-surface mb-6">Internal controls and SOX/ICFR support for businesses with US-listed parents or group reporting obligations, and for UK/Ireland organisations preparing for the new board-level internal-controls declaration.</p>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Backed by six years of hands-on SOX, ICFR, SOC and ISAE controls work at PwC and Deloitte across insurance, banking and industrial clients.</p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="controls-sox.html" class="inline-block bg-primary text-on-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300">See full detail</a>
-              <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
-            </div>
+      <article id="controls" class="group py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[0.5px] border-outline-variant">
+        <div class="flex-1">
+          <span class="font-label-sm text-label-sm text-secondary mb-4 block">05 / GOVERNANCE</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Internal Controls</h2>
+        </div>
+        <div class="flex-1 md:px-12">
+          <p class="font-body-md text-body-md text-on-surface-variant mb-6">SOX 404, ICFR and UK Provision 29 readiness — backed by six years at PwC and Deloitte. Architecture of robust control frameworks designed to mitigate risk and ensure operational integrity.</p>
+          <div class="flex gap-6">
+            <a href="controls-sox.html" class="font-label-sm text-label-sm uppercase tracking-widest text-primary hover:text-secondary transition-colors duration-300">See full detail →</a>
+            <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300">Request a quote →</a>
           </div>
         </div>
+        <span class="material-symbols-outlined text-primary text-4xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
       </article>
 
     </div>
+
+    <!-- Philosophy of Precision -->
+    <section class="max-w-container-max mx-auto px-5 md:px-margin-desktop py-stack-xl grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+      <div class="h-[500px] w-full bg-surface-container relative overflow-hidden">
+        <img class="object-cover w-full h-full opacity-90 grayscale" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSrpCiTS5ATeiwuTv-wv0MX6VjqYuLauJKaB1JyQFXz6QfNhBL0E_M1iBzvFey_WTJKw_PnzGsUYPmP3SK32qaIOciltdNFCs6gayJUidvNVdv2295XbE1p3GVUFxYLYVbgeibvwhxdpCDu54GdTsby7_ztstt5FpX9ZLqVGL4pSmcMspMwwzHETZGSsdiiUqT8o62Naq_WZrog_14nUxnOy18jY-kAuZufTEb-Drh77kmDbFaB9-N_zkmCiinP-qH36pZq2pxHXfN" alt="Architectural precision"/>
+      </div>
+      <div class="md:pl-16">
+        <h3 class="font-headline-md text-headline-md text-primary mb-8">The Philosophy of Precision.</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+          In the realm of professional accounting, ambiguity is the enemy of progress. True freedom for a business owner comes from the absolute certainty of their financial foundations.
+        </p>
+        <div class="border-l-[1px] border-primary pl-8 py-2">
+          <p class="font-body-md text-body-md italic text-primary">
+            "Elegance is not being noticed — it's being remembered for the results you deliver through unwavering discipline."
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- Closing CTA -->
     <section class="bg-primary px-5 md:px-margin-desktop py-stack-xl">

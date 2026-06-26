@@ -18,7 +18,7 @@
             "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
             "surface-container-highest": "#e0e3e5",
             "on-surface": "#191c1e", "on-surface-variant": "#45474c",
-            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "outline": "#6b6d73", "outline-variant": "#c5c6cd",
             "primary": "#091426", "on-primary": "#ffffff",
             "primary-container": "#1e293b", "on-primary-container": "#8590a6",
             "secondary": "#755a26", "on-secondary": "#ffffff",
@@ -56,6 +56,7 @@
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
     body { -webkit-font-smoothing: antialiased; }
     ::selection { background-color: #fdd897; color: #271900; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
@@ -70,7 +71,7 @@
         <a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
         <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
       </nav>
-      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+      <button class="md:hidden text-primary p-2.5 -mr-2.5" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -112,6 +113,12 @@
       </div>
     </section>
 
+    <!-- Architectural Anchor Image -->
+    <section class="w-full h-[480px] overflow-hidden relative">
+      <div class="absolute inset-0 bg-primary/10 mix-blend-multiply z-10"></div>
+      <img class="w-full h-full object-cover grayscale brightness-110" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA045_nHXuirpGEeToDV6qqAJjBmN6l7z4kEC3nvpYUI7WbhfbDMgM64472lQdymmbxEmqTuYOfQhanG3nE2R82pVwGPxMFGDESlPp5QV9V1bMsxN873jkGiAZlV3xbuE-5Id-7mpMHtYu6q3DjcCULMgf8tXOM-14-ptoRMKh3ficSHfjoWNo_j9pvsrGFfJS8WEykXdwBuq9CidgKCZT7TKamxDROwspWTSTXFOy5X366SpI0UUgvnhlbOgE6uExRVgRTGYQ-pN7E" alt="Architectural precision — structural integrity"/>
+    </section>
+
     <!-- Intro -->
     <section class="px-5 md:px-margin-desktop py-stack-xl border-b-[0.5px] border-outline-variant">
       <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
@@ -132,29 +139,29 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 
-          <!-- SOX 404 -->
-          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">US SOX</span>
-            <h3 class="font-headline-md text-headline-md text-primary mb-4">SOX 404</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant mb-8">For businesses with US-listed parents, group reporting obligations, or operations in scope of the Sarbanes-Oxley Act.</p>
+          <!-- SOX 404 — flagship dark -->
+          <div class="bg-primary p-8">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container block mb-6">US SOX</span>
+            <h3 class="font-headline-md text-headline-md text-on-primary mb-4">SOX 404</h3>
+            <p class="font-body-md text-body-md text-on-primary/70 mb-8">For businesses with US-listed parents, group reporting obligations, or operations in scope of the Sarbanes-Oxley Act.</p>
             <ul class="space-y-0">
-              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
-                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
-                <span class="font-label-sm text-label-sm uppercase">Risk and control matrix (RCM) design — entity-level, IT general and business-process controls</span>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-on-primary/20 py-4">
+                <span class="material-symbols-outlined text-secondary-container text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase text-on-primary/70">Risk and control matrix (RCM) design — entity-level, IT general and business-process controls</span>
               </li>
-              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
-                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
-                <span class="font-label-sm text-label-sm uppercase">Deficiency identification, root cause analysis and remediation support</span>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-on-primary/20 py-4">
+                <span class="material-symbols-outlined text-secondary-container text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase text-on-primary/70">Deficiency identification, root cause analysis and remediation support</span>
               </li>
-              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
-                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
-                <span class="font-label-sm text-label-sm uppercase">Workpaper preparation and review</span>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-on-primary/20 py-4">
+                <span class="material-symbols-outlined text-secondary-container text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase text-on-primary/70">Workpaper preparation and review</span>
               </li>
             </ul>
           </div>
 
-          <!-- ICFR -->
-          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
+          <!-- ICFR — outlined -->
+          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">ICFR</span>
             <h3 class="font-headline-md text-headline-md text-primary mb-4">ICFR &amp; Assurance</h3>
             <p class="font-body-md text-body-md text-on-surface-variant mb-8">Strengthening Internal Controls over Financial Reporting and supporting external assurance requirements.</p>
@@ -174,8 +181,8 @@
             </ul>
           </div>
 
-          <!-- Provision 29 -->
-          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
+          <!-- Provision 29 — editorial bare -->
+          <div class="p-8 border-t-[0.5px] border-b-[0.5px] border-outline-variant">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">UK &amp; Ireland</span>
             <h3 class="font-headline-md text-headline-md text-primary mb-4">Provision 29</h3>
             <p class="font-body-md text-body-md text-on-surface-variant mb-8">For UK-listed organisations preparing for Provision 29 of the revised UK Corporate Governance Code 2024. Applies to accounting periods beginning on or after 1 January 2026.</p>

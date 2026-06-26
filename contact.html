@@ -18,7 +18,7 @@
             "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
             "surface-container-highest": "#e0e3e5",
             "on-surface": "#191c1e", "on-surface-variant": "#45474c",
-            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "outline": "#6b6d73", "outline-variant": "#c5c6cd",
             "primary": "#091426", "on-primary": "#ffffff",
             "primary-container": "#1e293b", "on-primary-container": "#8590a6",
             "secondary": "#755a26", "on-secondary": "#ffffff",
@@ -54,12 +54,15 @@
   </script>
   <style>
     .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-    .sig-input { border: none; border-bottom: 0.5px solid #75777d; background: transparent; border-radius: 0; padding: 10px 0; width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #191c1e; }
+    .sig-input { border: none; border-bottom: 0.5px solid #6b6d73; background: transparent; border-radius: 0; padding: 10px 0; width: 100%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #191c1e; }
     .sig-input:focus { outline: none; box-shadow: none; border-bottom: 1.5px solid #091426; }
     .sig-input::placeholder { color: #c5c6cd; }
     textarea.sig-input { resize: none; }
+    .field-error { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; color: #b00020; margin-top: 4px; display: block; }
+    .sig-input[aria-invalid="true"] { border-bottom-color: #b00020; border-bottom-width: 1.5px; }
     body { -webkit-font-smoothing: antialiased; }
     ::selection { background-color: #fdd897; color: #271900; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
   </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
@@ -74,7 +77,7 @@
         <a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
         <a href="contact.html" aria-current="page" class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Contact</a>
       </nav>
-      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+      <button class="md:hidden text-primary p-2.5 -mr-2.5" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
         <span class="material-symbols-outlined">menu</span>
       </button>
     </div>
@@ -133,15 +136,18 @@
         <form id="contact-form" onsubmit="handleContactForm(event)" novalidate class="space-y-10">
           <div class="flex flex-col space-y-2">
             <label for="contact-name" class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Name</label>
-            <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Your name" class="sig-input"/>
+            <input type="text" id="contact-name" name="name" required aria-required="true" autocomplete="name" placeholder="Your name" class="sig-input" aria-describedby="err-name"/>
+            <span id="err-name" role="alert" hidden class="field-error"></span>
           </div>
           <div class="flex flex-col space-y-2">
             <label for="contact-email" class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Email</label>
-            <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="your@email.com" class="sig-input"/>
+            <input type="email" id="contact-email" name="email" required aria-required="true" autocomplete="email" placeholder="your@email.com" class="sig-input" aria-describedby="err-email"/>
+            <span id="err-email" role="alert" hidden class="field-error"></span>
           </div>
           <div class="flex flex-col space-y-2">
             <label for="contact-message" class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Message</label>
-            <textarea id="contact-message" name="message" required rows="5" placeholder="Tell me what you need..." class="sig-input"></textarea>
+            <textarea id="contact-message" name="message" required aria-required="true" rows="5" placeholder="Tell me what you need..." class="sig-input" aria-describedby="err-message"></textarea>
+            <span id="err-message" role="alert" hidden class="field-error"></span>
           </div>
           <div class="pt-4">
             <button type="submit" class="bg-primary text-on-primary px-12 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300">Send message</button>
@@ -183,10 +189,34 @@
 
     function handleContactForm(event) {
       event.preventDefault();
+      let valid = true;
+      const fields = [
+        { id: 'contact-name', errId: 'err-name', msg: 'Please enter your name.', validate: v => v.length > 0 },
+        { id: 'contact-email', errId: 'err-email', msg: 'Please enter a valid email address.', validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+        { id: 'contact-message', errId: 'err-message', msg: 'Please enter a message.', validate: v => v.length > 0 },
+      ];
+      fields.forEach(({ id, errId, msg, validate }) => {
+        const input = document.getElementById(id);
+        const err = document.getElementById(errId);
+        if (!validate(input.value.trim())) {
+          input.setAttribute('aria-invalid', 'true');
+          err.textContent = msg;
+          err.hidden = false;
+          valid = false;
+        } else {
+          input.setAttribute('aria-invalid', 'false');
+          err.textContent = '';
+          err.hidden = true;
+        }
+      });
+      if (!valid) {
+        const first = document.querySelector('[aria-invalid="true"]');
+        if (first) first.focus();
+        return;
+      }
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
-      if (!name || !email || !message) return;
       const subject = encodeURIComponent('Enquiry from ' + name);
       const body = encodeURIComponent(message + '\n\nFrom: ' + name + '\nReply to: ' + email);
       window.location.href = 'mailto:mathurakansha0209@gmail.com?subject=' + subject + '&body=' + body;
@@ -196,6 +226,13 @@
       const label = input.previousElementSibling;
       input.addEventListener('focus', () => label && label.classList.add('text-primary'));
       input.addEventListener('blur', () => label && label.classList.remove('text-primary'));
+      input.addEventListener('input', () => {
+        if (input.getAttribute('aria-invalid') === 'true') {
+          input.setAttribute('aria-invalid', 'false');
+          const errId = input.getAttribute('aria-describedby');
+          if (errId) { const err = document.getElementById(errId); if (err) { err.textContent = ''; err.hidden = true; } }
+        }
+      });
     });
   </script>
 
