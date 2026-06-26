@@ -1,186 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Remote bookkeeping, accounting and controls support for UK and Irish firms — Big 4 training, delivered from India. Akansha Mathur CA.">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Remote bookkeeping, accounting and controls support for UK and Irish firms — Big 4 training, delivered from India. Akansha Mathur CA."/>
   <title>Akansha Mathur, CA — Remote Accounting Support</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="css/fonts.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f7f9fb", "surface-dim": "#d8dadc",
+            "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
+            "surface-container-highest": "#e0e3e5",
+            "on-surface": "#191c1e", "on-surface-variant": "#45474c",
+            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "primary": "#091426", "on-primary": "#ffffff",
+            "primary-container": "#1e293b", "on-primary-container": "#8590a6",
+            "secondary": "#755a26", "on-secondary": "#ffffff",
+            "secondary-container": "#fdd897", "on-secondary-container": "#785d28",
+            "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#e5c283",
+            "background": "#f7f9fb", "on-background": "#191c1e",
+          },
+          borderRadius: { "DEFAULT": "0px", "sm": "2px", "full": "9999px" },
+          spacing: {
+            "gutter": "24px", "margin-mobile": "20px", "margin-desktop": "64px",
+            "stack-xl": "80px", "stack-md": "40px", "container-max": "1280px",
+          },
+          fontFamily: {
+            "display-xl": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+          },
+          fontSize: {
+            "display-xl": ["72px", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "1.7", letterSpacing: "0.01em", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "1.0", letterSpacing: "0.08em", fontWeight: "600" }],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .parchment-bg { background-color: #f7f9fb; background-image: radial-gradient(#d8dadc 0.5px, transparent 0.5px); background-size: 24px 24px; }
+    body { -webkit-font-smoothing: antialiased; }
+    ::selection { background-color: #fdd897; color: #271900; }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 bg-primary text-on-primary px-4 py-2 font-label-sm text-label-sm uppercase tracking-widest" href="#main-content">Skip to content</a>
 
-  <nav class="nav" role="navigation" aria-label="Main">
-    <div class="container">
-      <a class="nav__logo" href="index.html">Akansha Mathur, <span>CA</span></a>
-      <button class="nav__burger" aria-expanded="false" aria-label="Open menu" aria-controls="nav-links">
-        <span></span><span></span><span></span>
+  <header class="w-full top-0 sticky z-40 bg-surface border-b-[0.5px] border-outline-variant">
+    <div class="flex items-center justify-between px-5 md:px-margin-desktop py-6 max-w-container-max mx-auto">
+      <a href="index.html" class="font-display-xl text-[18px] tracking-widest text-primary uppercase leading-none">AKANSHA MATHUR, <span class="text-secondary">CA</span></a>
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main">
+        <a href="index.html" aria-current="page" class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Home</a>
+        <a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
+        <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+      </nav>
+      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="material-symbols-outlined">menu</span>
       </button>
-      <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
     </div>
-  </nav>
+  </header>
+
+  <div class="fixed inset-0 z-50 bg-surface hidden opacity-0 transition-opacity duration-500" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="flex flex-col items-center justify-center h-full space-y-stack-md">
+      <button class="absolute top-6 right-5 text-primary" id="close-drawer" aria-label="Close menu">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+      <span class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant mb-4">Navigation</span>
+      <a href="index.html" class="font-headline-lg text-headline-lg-mobile text-primary underline decoration-[0.5px] underline-offset-8">Home</a>
+      <a href="services.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
+      <a href="contact.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+    </div>
+  </div>
 
   <main id="main-content">
 
-    <section class="hero section">
-      <div class="container">
-        <div class="hero__eyebrow">
-          <span class="hero__pill">Available &middot; replies within a day</span>
-        </div>
-        <h1 class="hero__name">Akansha Mathur</h1>
-        <p class="hero__qual">Chartered Accountant &middot; ICAI (India) &amp; ACA Chartered Accountants Ireland &middot; M.Sc. Trinity College Dublin</p>
-        <p class="hero__value">Remote bookkeeping, accounting and controls support for UK and Irish firms — Big 4 training, delivered from India.</p>
-        <a href="contact.html" class="btn btn--primary">Get in touch</a>
+    <!-- Hero -->
+    <section class="parchment-bg px-5 md:px-margin-desktop pt-stack-xl pb-stack-xl">
+      <div class="max-w-container-max mx-auto">
+        <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary mb-6 block">Available · replies within a day</span>
+        <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary mb-6">Akansha Mathur.</h1>
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-outline mb-12">Chartered Accountant · ICAI (India) · ACA Ireland · M.Sc. Trinity College Dublin</p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant border-l-[0.5px] border-outline-variant pl-8 max-w-2xl mb-12">
+          Remote bookkeeping, accounting and controls support for UK and Irish firms — Big 4 training, delivered from India.
+        </p>
+        <a href="contact.html" class="bg-primary text-on-primary px-10 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300 inline-block">Get in touch</a>
       </div>
     </section>
 
-    <section class="section--tight">
-      <div class="container">
-        <div class="profile">
-          <p>I'm a dual-qualified Chartered Accountant — ICAI in India and ACA with Chartered Accountants Ireland — with six years across Big 4 firms (PwC, Deloitte) and a global bank. Much of that time was spent in internal audit and controls assurance, where accuracy and clean documentation aren't optional. I now bring that same rigour to remote bookkeeping, accounting and controls support for UK and Irish practices and small businesses, so your books and your controls are handled by a qualified professional, not outsourced to guesswork.</p>
+    <!-- Profile -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl bg-surface">
+      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="hidden md:block md:col-span-1 border-r-[0.5px] border-outline-variant"></div>
+        <div class="md:col-span-5 py-4">
+          <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-8">About</p>
+          <p class="font-body-lg text-body-lg text-on-surface">
+            I'm a dual-qualified Chartered Accountant — ICAI in India and ACA with Chartered Accountants Ireland — with six years across Big 4 firms (PwC, Deloitte) and a global bank. Much of that time was spent in internal audit and controls assurance, where accuracy and clean documentation aren't optional. I now bring that same rigour to remote bookkeeping, accounting and controls support for UK and Irish practices and small businesses, so your books and your controls are handled by a qualified professional, not outsourced to guesswork.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <p class="section-label">What I do</p>
-        <h2 class="section__heading">Five ways I can support your practice</h2>
-        <div class="services-grid">
-          <a href="services.html#bookkeeping" class="service-card">
-            <p class="service-card__number">01</p>
-            <h3>Bookkeeping</h3>
-            <p>Bank reconciliations, categorisation, ledger maintenance and clean month-end records — ready for your review.</p>
-          </a>
-          <a href="services.html#vat" class="service-card">
-            <p class="service-card__number">02</p>
-            <h3>VAT Return Preparation</h3>
-            <p>MTD-compatible VAT returns prepared and returned for your review and submission.</p>
-          </a>
-          <a href="services.html#year-end" class="service-card">
-            <p class="service-card__number">03</p>
-            <h3>Year-End Accounts</h3>
-            <p>From trial balance to a clean set of accounts for sole traders and small companies, ready for your finalisation.</p>
-          </a>
-          <a href="services.html#management" class="service-card">
-            <p class="service-card__number">04</p>
-            <h3>Management Reporting &amp; Payroll Support</h3>
-            <p>Monthly management accounts, PAYE, RTI submissions and payslips — reliable and on time.</p>
-          </a>
-          <a href="controls-sox.html" class="service-card service-card--controls">
-            <p class="service-card__number">05</p>
-            <h3>Controls &amp; SOX Support</h3>
-            <p>SOX 404, ICFR and UK Provision 29 readiness — backed by six years at PwC and Deloitte. See full detail.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="how-it-works">
-          <p class="section-label">How it works</p>
-          <h2>Simple process, clean handoffs</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="step__number">1</div>
-              <h3>You share the documents</h3>
-              <p>Via Dext, a shared folder, or your existing client portal — whichever fits your workflow.</p>
+        <div class="md:col-span-5 md:col-start-8 bg-surface-container-low p-10 flex flex-col justify-center relative">
+          <div class="absolute top-0 left-0 w-12 h-12 border-t-[0.5px] border-l-[0.5px] border-primary"></div>
+          <div class="space-y-10">
+            <div>
+              <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">01. Dual-qualified</span>
+              <p class="font-body-md text-body-md text-on-surface">ICAI (India) and ACA Chartered Accountants Ireland — two professional bodies, one practitioner.</p>
             </div>
-            <div class="step">
-              <div class="step__number">2</div>
-              <h3>I prepare the work</h3>
-              <p>Returned within 48–72 hours, reconciled and ready for your review. Nothing to chase.</p>
+            <div class="border-t-[0.5px] border-outline-variant pt-6">
+              <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">02. Big 4 trained</span>
+              <p class="font-body-md text-body-md text-on-surface">Six years at PwC and Deloitte across internal audit, controls assurance and a global bank.</p>
             </div>
-            <div class="step">
-              <div class="step__number">3</div>
-              <h3>You review and submit</h3>
-              <p>Through your Agent Services Account. You keep the client relationship and the filing — always.</p>
+            <div class="border-t-[0.5px] border-outline-variant pt-6">
+              <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">03. Audit-grade accuracy</span>
+              <p class="font-body-md text-body-md text-on-surface">The same rigour applied to everyday books — at 40–60% of local cost.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container">
-        <div class="trust-strip__inner">
-          <div class="trust-item">
-            <p class="trust-item__stat">2×</p>
-            <p class="trust-item__label">Qualified</p>
-            <p class="trust-item__value">ICAI (India) &amp; ACA Chartered Accountants Ireland</p>
+    <!-- Services list -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl">
+      <div class="max-w-container-max mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b-[0.5px] border-outline-variant pb-6">
+          <div>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-2">What I do</p>
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Five ways I can support your practice</h2>
           </div>
-          <div class="trust-item">
-            <p class="trust-item__stat">6 yrs</p>
-            <p class="trust-item__label">Experience</p>
-            <p class="trust-item__value">PwC, Deloitte &amp; a global bank</p>
+          <a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors mt-4 md:mt-0">See all services →</a>
+        </div>
+        <a href="services.html#bookkeeping" class="group flex flex-col md:flex-row justify-between items-start md:items-center py-stack-md gap-4 border-b-[0.5px] border-outline-variant hover:bg-surface-container-low transition-colors duration-300 -mx-5 md:-mx-margin-desktop px-5 md:px-margin-desktop">
+          <div class="flex-shrink-0 w-full md:w-64">
+            <span class="font-label-sm text-label-sm text-outline block mb-3">01 / Bookkeeping</span>
+            <h3 class="font-headline-md text-[22px] text-primary leading-tight">Bookkeeping</h3>
           </div>
-          <div class="trust-item">
-            <p class="trust-item__stat">B4</p>
-            <p class="trust-item__label">Training</p>
-            <p class="trust-item__value">Audit-grade accuracy on everyday books</p>
+          <p class="flex-1 font-body-md text-body-md text-on-surface-variant md:px-12">Bank reconciliations, categorisation, ledger maintenance and clean month-end records — ready for your review.</p>
+          <span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
+        </a>
+        <a href="services.html#vat" class="group flex flex-col md:flex-row justify-between items-start md:items-center py-stack-md gap-4 border-b-[0.5px] border-outline-variant hover:bg-surface-container-low transition-colors duration-300 -mx-5 md:-mx-margin-desktop px-5 md:px-margin-desktop">
+          <div class="flex-shrink-0 w-full md:w-64">
+            <span class="font-label-sm text-label-sm text-outline block mb-3">02 / Taxation</span>
+            <h3 class="font-headline-md text-[22px] text-primary leading-tight">VAT Return Preparation</h3>
           </div>
-          <div class="trust-item">
-            <p class="trust-item__stat">DPA</p>
-            <p class="trust-item__label">Data handling</p>
-            <p class="trust-item__value">GDPR-aware &middot; signed on request</p>
+          <p class="flex-1 font-body-md text-body-md text-on-surface-variant md:px-12">MTD-compatible VAT returns prepared and returned for your review and submission.</p>
+          <span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
+        </a>
+        <a href="services.html#year-end" class="group flex flex-col md:flex-row justify-between items-start md:items-center py-stack-md gap-4 border-b-[0.5px] border-outline-variant hover:bg-surface-container-low transition-colors duration-300 -mx-5 md:-mx-margin-desktop px-5 md:px-margin-desktop">
+          <div class="flex-shrink-0 w-full md:w-64">
+            <span class="font-label-sm text-label-sm text-outline block mb-3">03 / Reporting</span>
+            <h3 class="font-headline-md text-[22px] text-primary leading-tight">Year-End Accounts</h3>
           </div>
-          <div class="trust-item">
-            <p class="trust-item__label">Software</p>
-            <p class="trust-item__value">Xero &middot; QuickBooks Online &middot; Dext &middot; Sage &middot; Power BI &middot; Advanced Excel &middot; DocuSign</p>
+          <p class="flex-1 font-body-md text-body-md text-on-surface-variant md:px-12">From trial balance to a clean set of accounts for sole traders and small companies, ready for your finalisation.</p>
+          <span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
+        </a>
+        <a href="services.html#management" class="group flex flex-col md:flex-row justify-between items-start md:items-center py-stack-md gap-4 border-b-[0.5px] border-outline-variant hover:bg-surface-container-low transition-colors duration-300 -mx-5 md:-mx-margin-desktop px-5 md:px-margin-desktop">
+          <div class="flex-shrink-0 w-full md:w-64">
+            <span class="font-label-sm text-label-sm text-outline block mb-3">04 / Strategy</span>
+            <h3 class="font-headline-md text-[22px] text-primary leading-tight">Management Reporting &amp; Payroll</h3>
+          </div>
+          <p class="flex-1 font-body-md text-body-md text-on-surface-variant md:px-12">Monthly management accounts, PAYE, RTI submissions and payslips — reliable and on time.</p>
+          <span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
+        </a>
+        <a href="controls-sox.html" class="group flex flex-col md:flex-row justify-between items-start md:items-center py-stack-md gap-4 border-b-[0.5px] border-outline-variant hover:bg-surface-container-low transition-colors duration-300 -mx-5 md:-mx-margin-desktop px-5 md:px-margin-desktop">
+          <div class="flex-shrink-0 w-full md:w-64">
+            <span class="font-label-sm text-label-sm text-secondary block mb-3">05 / Governance</span>
+            <h3 class="font-headline-md text-[22px] text-primary leading-tight">Controls &amp; SOX Support</h3>
+          </div>
+          <p class="flex-1 font-body-md text-body-md text-on-surface-variant md:px-12">SOX 404, ICFR and UK Provision 29 readiness — backed by six years at PwC and Deloitte. See full detail.</p>
+          <span class="material-symbols-outlined text-primary text-3xl group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl bg-surface-container-low">
+      <div class="max-w-container-max mx-auto">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4">How it works</p>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-primary mb-12 border-b-[0.5px] border-outline-variant pb-6">Simple process, clean handoffs</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x-[0.5px] divide-outline-variant">
+          <div class="py-8 md:py-0 md:pr-10">
+            <p class="font-display-xl text-[48px] text-outline-variant font-bold leading-none mb-6">1</p>
+            <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-3">You share the documents</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Via Dext, a shared folder, or your existing client portal — whichever fits your workflow.</p>
+          </div>
+          <div class="py-8 md:py-0 md:px-10">
+            <p class="font-display-xl text-[48px] text-outline-variant font-bold leading-none mb-6">2</p>
+            <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-3">I prepare the work</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Returned within 48–72 hours, reconciled and ready for your review. Nothing to chase.</p>
+          </div>
+          <div class="py-8 md:py-0 md:pl-10">
+            <p class="font-display-xl text-[48px] text-outline-variant font-bold leading-none mb-6">3</p>
+            <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-3">You review and submit</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Through your Agent Services Account. You keep the client relationship and the filing — always.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="timezone-section">
-      <div class="container">
-        <p class="section-label">Working across time zones</p>
-        <div
-          class="timezone-visual"
-          aria-label="Timezone overlap: your 9am London is my 2:30pm India"
-        >
-          <div class="tz-block">
-            <p class="tz-block__time">09:00</p>
-            <p class="tz-block__loc">London / Dublin</p>
+    <!-- Credentials -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl">
+      <div class="max-w-container-max mx-auto">
+        <div class="border-b-[0.5px] border-outline-variant pb-4 mb-10 flex justify-between items-baseline">
+          <p class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Credentials</p>
+          <p class="font-label-sm text-label-sm text-on-surface-variant">At a glance</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-gutter gap-y-10">
+          <div class="border-b-[0.5px] border-outline-variant pb-6">
+            <p class="font-display-xl text-[44px] text-primary font-bold leading-none mb-3">2×</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Qualified</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">ICAI (India) &amp; ACA Chartered Accountants Ireland</p>
           </div>
-          <span class="tz-separator">/</span>
-          <div class="tz-block">
-            <p class="tz-block__time">14:30</p>
-            <p class="tz-block__loc">India (IST)</p>
+          <div class="border-b-[0.5px] border-outline-variant pb-6">
+            <p class="font-display-xl text-[44px] text-primary font-bold leading-none mb-3">6 yrs</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Experience</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">PwC, Deloitte &amp; a global bank</p>
+          </div>
+          <div class="border-b-[0.5px] border-outline-variant pb-6">
+            <p class="font-display-xl text-[44px] text-primary font-bold leading-none mb-3">B4</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Training</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Audit-grade accuracy on everyday books</p>
+          </div>
+          <div class="border-b-[0.5px] border-outline-variant pb-6">
+            <p class="font-display-xl text-[44px] text-primary font-bold leading-none mb-3">DPA</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Data handling</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">GDPR-aware · signed on request</p>
           </div>
         </div>
-        <p class="timezone-caption">Your morning briefing reaches me mid-afternoon. I can turn work around the same day.</p>
+        <div class="mt-10 pt-8 border-t-[0.5px] border-outline-variant">
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mr-3">Software</span>
+          <span class="font-body-md text-body-md text-on-surface">Xero · QuickBooks Online · Dext · Sage · Power BI · Advanced Excel · DocuSign</span>
+        </div>
       </div>
     </section>
 
-    <section class="home-cta section">
-      <div class="container">
-        <h2>Ready to take bookkeeping off your plate?</h2>
-        <p>Audit-grade accuracy, Big 4 training — at 40–60% of local cost.</p>
-        <a href="contact.html" class="btn btn--primary">Get in touch</a>
+    <!-- Timezone -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl bg-surface-container">
+      <div class="max-w-container-max mx-auto">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-10">Working across time zones</p>
+        <div class="flex items-center gap-10 mb-8" aria-label="Timezone overlap: your 9am London is my 2:30pm India">
+          <div>
+            <p class="font-display-xl text-[52px] md:text-[64px] text-primary font-bold leading-none">09:00</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-3">London / Dublin</p>
+          </div>
+          <div class="border-l-[0.5px] border-outline-variant h-16"></div>
+          <div>
+            <p class="font-display-xl text-[52px] md:text-[64px] text-primary font-bold leading-none">14:30</p>
+            <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-3">India (IST)</p>
+          </div>
+        </div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Your morning briefing reaches me mid-afternoon. I can turn work around the same day.</p>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="bg-primary px-5 md:px-margin-desktop py-stack-xl">
+      <div class="max-w-container-max mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-stack-md">
+        <div class="max-w-2xl">
+          <h2 class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-on-primary mb-4">Ready to take bookkeeping off your plate?</h2>
+          <p class="font-body-lg text-body-lg text-on-primary/70">Audit-grade accuracy, Big 4 training — at 40–60% of local cost.</p>
+        </div>
+        <a href="contact.html" class="bg-secondary-container text-on-secondary-container px-12 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-fixed-dim transition-colors duration-300 whitespace-nowrap flex-shrink-0">Get in touch</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span class="footer__name">Akansha Mathur, CA</span>
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <footer class="w-full border-t-[0.5px] border-outline-variant">
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <span class="font-display-xl text-[15px] text-primary uppercase tracking-widest">AKANSHA MATHUR, <span class="text-secondary">CA</span></span>
+      <ul class="flex gap-8" role="list">
+        <li><a href="index.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+        <li><a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Services</a></li>
+        <li><a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
       </ul>
-      <p class="footer__copy">&copy; 2025 Akansha Mathur. All rights reserved.</p>
+      <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2025 Akansha Mathur. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const closeDrawer = document.getElementById('close-drawer');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileDrawer.classList.remove('hidden');
+      setTimeout(() => mobileDrawer.classList.remove('opacity-0'), 10);
+    });
+    closeDrawer.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileDrawer.classList.add('opacity-0');
+      setTimeout(() => mobileDrawer.classList.add('hidden'), 500);
+    });
+  </script>
+
 </body>
 </html>

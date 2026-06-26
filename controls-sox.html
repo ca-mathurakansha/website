@@ -1,100 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Internal controls and SOX/ICFR support — US SOX and UK Provision 29 readiness. Akansha Mathur CA.">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Internal controls and SOX/ICFR support — US SOX and UK Provision 29 readiness. Akansha Mathur CA."/>
   <title>Controls &amp; SOX Support — Akansha Mathur, CA</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="css/fonts.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f7f9fb", "surface-dim": "#d8dadc",
+            "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
+            "surface-container-highest": "#e0e3e5",
+            "on-surface": "#191c1e", "on-surface-variant": "#45474c",
+            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "primary": "#091426", "on-primary": "#ffffff",
+            "primary-container": "#1e293b", "on-primary-container": "#8590a6",
+            "secondary": "#755a26", "on-secondary": "#ffffff",
+            "secondary-container": "#fdd897", "on-secondary-container": "#785d28",
+            "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#e5c283",
+            "background": "#f7f9fb", "on-background": "#191c1e",
+          },
+          borderRadius: { "DEFAULT": "0px", "sm": "2px", "full": "9999px" },
+          spacing: {
+            "gutter": "24px", "margin-mobile": "20px", "margin-desktop": "64px",
+            "stack-xl": "80px", "stack-md": "40px", "container-max": "1280px",
+          },
+          fontFamily: {
+            "display-xl": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+          },
+          fontSize: {
+            "display-xl": ["72px", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "1.7", letterSpacing: "0.01em", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "1.0", letterSpacing: "0.08em", fontWeight: "600" }],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    body { -webkit-font-smoothing: antialiased; }
+    ::selection { background-color: #fdd897; color: #271900; }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 bg-primary text-on-primary px-4 py-2 font-label-sm text-label-sm uppercase tracking-widest" href="#main-content">Skip to content</a>
 
-  <nav class="nav" role="navigation" aria-label="Main">
-    <div class="container">
-      <a class="nav__logo" href="index.html">Akansha Mathur, <span>CA</span></a>
-      <button class="nav__burger" aria-expanded="false" aria-label="Open menu" aria-controls="nav-links">
-        <span></span><span></span><span></span>
+  <header class="w-full top-0 sticky z-40 bg-surface border-b-[0.5px] border-outline-variant">
+    <div class="flex items-center justify-between px-5 md:px-margin-desktop py-6 max-w-container-max mx-auto">
+      <a href="index.html" class="font-display-xl text-[18px] tracking-widest text-primary uppercase leading-none">AKANSHA MATHUR, <span class="text-secondary">CA</span></a>
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main">
+        <a href="index.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Home</a>
+        <a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
+        <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+      </nav>
+      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="material-symbols-outlined">menu</span>
       </button>
-      <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
     </div>
-  </nav>
+  </header>
+
+  <div class="fixed inset-0 z-50 bg-surface hidden opacity-0 transition-opacity duration-500" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="flex flex-col items-center justify-center h-full space-y-stack-md">
+      <button class="absolute top-6 right-5 text-primary" id="close-drawer" aria-label="Close menu">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+      <span class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant mb-4">Navigation</span>
+      <a href="index.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Home</a>
+      <a href="services.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Services</a>
+      <a href="contact.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+    </div>
+  </div>
 
   <main id="main-content">
 
-    <div class="sox-hero section--tight">
-      <div class="container">
-        <p class="sox-breadcrumb"><a href="services.html">Services</a> &rsaquo; Controls &amp; SOX Support</p>
-        <p class="section-label">Service 05</p>
-        <h1>Controls &amp; SOX Support</h1>
-        <p>Internal controls and SOX/ICFR support — for US-listed obligations and for UK/Ireland Provision 29 readiness.</p>
+    <!-- Page hero -->
+    <section class="px-5 md:px-margin-desktop pt-stack-xl pb-stack-md border-b-[0.5px] border-outline-variant">
+      <div class="max-w-container-max mx-auto">
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4">
+          <a href="services.html" class="hover:text-primary transition-colors">Services</a>
+          <span class="mx-2">›</span>
+          <span>Controls &amp; SOX Support</span>
+        </p>
+        <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-6">Service 05</p>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+          <div class="md:col-span-8">
+            <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary">Controls &amp;<br class="hidden md:block"/> SOX Support.</h1>
+          </div>
+          <div class="md:col-span-4 pb-2">
+            <p class="font-body-lg text-body-lg text-on-surface-variant border-l-[0.5px] border-outline-variant pl-8">
+              Internal controls and SOX/ICFR support — for US-listed obligations and for UK/Ireland Provision 29 readiness.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <section class="section">
-      <div class="container">
+    <!-- Intro -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl border-b-[0.5px] border-outline-variant">
+      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="hidden md:block md:col-span-1 border-r-[0.5px] border-outline-variant"></div>
+        <p class="md:col-span-9 font-body-lg text-body-lg text-on-surface">
+          Controls work is where my background runs deepest. Six years across PwC and Deloitte on SOX, ICFR, SOC and ISAE engagements — designing risk and control matrices, running walkthroughs and testing, identifying deficiencies and supporting remediation, and coordinating with external auditors. Whether your client answers to a US-listed parent or is preparing for the UK's new internal-controls declaration, the underlying discipline — COSO-based, evidence-driven controls testing — is the same, and it's what I do.
+        </p>
+      </div>
+    </section>
 
-        <div class="sox-intro">
-          <p>Controls work is where my background runs deepest. Six years across PwC and Deloitte on SOX, ICFR, SOC and ISAE engagements — designing risk and control matrices, running walkthroughs and testing, identifying deficiencies and supporting remediation, and coordinating with external auditors. Whether your client answers to a US-listed parent or is preparing for the UK's new internal-controls declaration, the underlying discipline — COSO-based, evidence-driven controls testing — is the same, and it's what I do.</p>
+    <!-- Framework cards -->
+    <section class="px-5 md:px-margin-desktop py-stack-xl">
+      <div class="max-w-container-max mx-auto">
+        <div class="flex justify-between items-baseline border-b-[0.5px] border-primary pb-4 mb-10">
+          <h2 class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Framework Implementation &amp; Assurance</h2>
+          <span class="font-label-sm text-label-sm text-on-surface-variant hidden md:block">Technical Core</span>
         </div>
 
-        <div class="sox-regimes">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 
-          <div class="sox-regime">
-            <span class="sox-regime__tag">US SOX / ICFR</span>
-            <h2>SOX 404 &amp; ICFR Support</h2>
-            <p>For businesses with US-listed parents, group reporting obligations, or operations in scope of the Sarbanes-Oxley Act.</p>
-            <ul>
-              <li>Risk and control matrix (RCM) design — entity-level, IT general, and business-process controls</li>
-              <li>Design and operating-effectiveness testing through structured walkthroughs and evidence-based sampling</li>
-              <li>Deficiency identification, root cause analysis and remediation support</li>
-              <li>Workpaper preparation and review</li>
-              <li>Coordination with external auditors on scope, evidence and timing</li>
-              <li>SOC and ISAE 3402 third-party assurance readiness</li>
+          <!-- SOX 404 -->
+          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">US SOX</span>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">SOX 404</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8">For businesses with US-listed parents, group reporting obligations, or operations in scope of the Sarbanes-Oxley Act.</p>
+            <ul class="space-y-0">
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Risk and control matrix (RCM) design — entity-level, IT general and business-process controls</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Deficiency identification, root cause analysis and remediation support</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Workpaper preparation and review</span>
+              </li>
             </ul>
-            <p style="margin-top: var(--sp-3);">Built on direct PwC and Deloitte experience across global insurance, banking and industrial clients.</p>
           </div>
 
-          <div class="sox-regime sox-regime--b">
-            <span class="sox-regime__tag">UK &amp; Ireland</span>
-            <h2>Provision 29 &amp; Internal Controls Readiness</h2>
-            <p>For UK-listed organisations preparing for Provision 29 of the revised UK Corporate Governance Code 2024 — the requirement for boards to declare annually on the effectiveness of their risk management and internal control framework.</p>
-            <p>Applies to accounting periods beginning on or after 1 January 2026. Covers financial, operational, reporting and compliance controls.</p>
-            <ul>
-              <li>Mapping and documenting material controls</li>
-              <li>Designing the evidence and monitoring needed to support a board declaration</li>
-              <li>Control testing and gap identification</li>
-              <li>Remediation planning</li>
+          <!-- ICFR -->
+          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">ICFR</span>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">ICFR &amp; Assurance</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8">Strengthening Internal Controls over Financial Reporting and supporting external assurance requirements.</p>
+            <ul class="space-y-0">
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Design and operating-effectiveness testing through structured walkthroughs and evidence-based sampling</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Coordination with external auditors on scope, evidence and timing</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">SOC and ISAE 3402 third-party assurance readiness</span>
+              </li>
             </ul>
-            <p class="sox-honesty-note">Provision 29 is principles-based and comply-or-explain — broader than US SOX, and not externally audited in the same way. This support is framed as readiness and uplift, not an audit opinion. The COSO framework underpins both regimes, so the controls discipline carries directly across.</p>
+          </div>
+
+          <!-- Provision 29 -->
+          <div class="bg-surface-container-low p-8 border-[0.5px] border-outline-variant">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-6">UK &amp; Ireland</span>
+            <h3 class="font-headline-md text-headline-md text-primary mb-4">Provision 29</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8">For UK-listed organisations preparing for Provision 29 of the revised UK Corporate Governance Code 2024. Applies to accounting periods beginning on or after 1 January 2026.</p>
+            <ul class="space-y-0">
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Mapping and documenting material controls</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Designing evidence and monitoring needed to support a board declaration</span>
+              </li>
+              <li class="flex items-start gap-3 border-t-[0.5px] border-outline-variant py-4">
+                <span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0">check_circle</span>
+                <span class="font-label-sm text-label-sm uppercase">Control testing, gap identification and remediation planning</span>
+              </li>
+            </ul>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-6 pt-6 border-t-[0.5px] border-outline-variant italic text-[14px]">
+              Provision 29 is principles-based and comply-or-explain — broader than US SOX, and not externally audited in the same way. This support is framed as readiness and uplift, not an audit opinion. The COSO framework underpins both regimes, so the controls discipline carries directly across.
+            </p>
           </div>
 
         </div>
 
-        <a href="contact.html" class="btn btn--primary">Request a quote</a>
-
+        <div class="mt-12">
+          <a href="contact.html" class="inline-block bg-primary text-on-primary px-10 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300">Request a quote</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span class="footer__name">Akansha Mathur, CA</span>
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <footer class="w-full border-t-[0.5px] border-outline-variant">
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <span class="font-display-xl text-[15px] text-primary uppercase tracking-widest">AKANSHA MATHUR, <span class="text-secondary">CA</span></span>
+      <ul class="flex gap-8" role="list">
+        <li><a href="index.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+        <li><a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Services</a></li>
+        <li><a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
       </ul>
-      <p class="footer__copy">&copy; 2025 Akansha Mathur. All rights reserved.</p>
+      <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2025 Akansha Mathur. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const closeDrawer = document.getElementById('close-drawer');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileDrawer.classList.remove('hidden');
+      setTimeout(() => mobileDrawer.classList.remove('opacity-0'), 10);
+    });
+    closeDrawer.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileDrawer.classList.add('opacity-0');
+      setTimeout(() => mobileDrawer.classList.add('hidden'), 500);
+    });
+  </script>
+
 </body>
 </html>

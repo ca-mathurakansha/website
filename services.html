@@ -1,109 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bookkeeping, VAT, year-end accounts, management reporting and controls support — prep returned for your review. Akansha Mathur CA.">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="description" content="Bookkeeping, VAT, year-end accounts, management reporting and controls support — prep returned for your review. Akansha Mathur CA."/>
   <title>Services — Akansha Mathur, CA</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="css/fonts.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f7f9fb", "surface-dim": "#d8dadc",
+            "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f4f6",
+            "surface-container": "#eceef0", "surface-container-high": "#e6e8ea",
+            "surface-container-highest": "#e0e3e5",
+            "on-surface": "#191c1e", "on-surface-variant": "#45474c",
+            "outline": "#75777d", "outline-variant": "#c5c6cd",
+            "primary": "#091426", "on-primary": "#ffffff",
+            "primary-container": "#1e293b", "on-primary-container": "#8590a6",
+            "secondary": "#755a26", "on-secondary": "#ffffff",
+            "secondary-container": "#fdd897", "on-secondary-container": "#785d28",
+            "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#e5c283",
+            "background": "#f7f9fb", "on-background": "#191c1e",
+          },
+          borderRadius: { "DEFAULT": "0px", "sm": "2px", "full": "9999px" },
+          spacing: {
+            "gutter": "24px", "margin-mobile": "20px", "margin-desktop": "64px",
+            "stack-xl": "80px", "stack-md": "40px", "container-max": "1280px",
+          },
+          fontFamily: {
+            "display-xl": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+          },
+          fontSize: {
+            "display-xl": ["72px", { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "1.7", letterSpacing: "0.01em", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "1.0", letterSpacing: "0.08em", fontWeight: "600" }],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    body { -webkit-font-smoothing: antialiased; }
+    ::selection { background-color: #fdd897; color: #271900; }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
 
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 bg-primary text-on-primary px-4 py-2 font-label-sm text-label-sm uppercase tracking-widest" href="#main-content">Skip to content</a>
 
-  <nav class="nav" role="navigation" aria-label="Main">
-    <div class="container">
-      <a class="nav__logo" href="index.html">Akansha Mathur, <span>CA</span></a>
-      <button class="nav__burger" aria-expanded="false" aria-label="Open menu" aria-controls="nav-links">
-        <span></span><span></span><span></span>
+  <header class="w-full top-0 sticky z-40 bg-surface border-b-[0.5px] border-outline-variant">
+    <div class="flex items-center justify-between px-5 md:px-margin-desktop py-6 max-w-container-max mx-auto">
+      <a href="index.html" class="font-display-xl text-[18px] tracking-widest text-primary uppercase leading-none">AKANSHA MATHUR, <span class="text-secondary">CA</span></a>
+      <nav class="hidden md:flex items-center space-x-10" aria-label="Main">
+        <a href="index.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Home</a>
+        <a href="services.html" aria-current="page" class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Services</a>
+        <a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+      </nav>
+      <button class="md:hidden text-primary" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="material-symbols-outlined">menu</span>
       </button>
-      <ul class="nav__links" id="nav-links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" aria-current="page">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
     </div>
-  </nav>
+  </header>
+
+  <div class="fixed inset-0 z-50 bg-surface hidden opacity-0 transition-opacity duration-500" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="flex flex-col items-center justify-center h-full space-y-stack-md">
+      <button class="absolute top-6 right-5 text-primary" id="close-drawer" aria-label="Close menu">
+        <span class="material-symbols-outlined text-4xl">close</span>
+      </button>
+      <span class="font-label-sm text-label-sm uppercase tracking-[0.3em] text-on-surface-variant mb-4">Navigation</span>
+      <a href="index.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Home</a>
+      <a href="services.html" class="font-headline-lg text-headline-lg-mobile text-primary underline decoration-[0.5px] underline-offset-8">Services</a>
+      <a href="contact.html" class="font-headline-lg text-headline-lg-mobile text-on-surface-variant hover:text-primary transition-colors duration-300">Contact</a>
+    </div>
+  </div>
 
   <main id="main-content">
 
-    <div class="services-page-hero section--tight">
-      <div class="container">
-        <p class="section-label">Services</p>
-        <h1>What I can do for your practice</h1>
-        <p>All work is prepared and returned to you for review — you keep the client relationship and the filing.</p>
+    <!-- Page hero -->
+    <section class="px-5 md:px-margin-desktop pt-stack-xl pb-stack-md border-b-[0.5px] border-outline-variant">
+      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-end">
+        <div class="md:col-span-8">
+          <p class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-6">Services</p>
+          <h1 class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary">What I can do<br class="hidden md:block"/> for your practice.</h1>
+        </div>
+        <div class="md:col-span-4 pb-2">
+          <p class="font-body-lg text-body-lg text-on-surface-variant border-l-[0.5px] border-outline-variant pl-8">
+            All work is prepared and returned to you for review — you keep the client relationship and the filing.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container">
+    <!-- Services -->
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop">
 
-      <article class="service-entry" id="bookkeeping">
-        <p class="service-entry__number">01</p>
-        <h2>Bookkeeping</h2>
-        <p>Day-to-day and monthly bookkeeping kept accurate and up to date. Bank reconciliations, categorisation, ledger maintenance, and clean month-end records ready for review.</p>
-        <p>Suited to firms who want reliable books maintained without adding headcount, and to small businesses who'd rather a qualified CA kept things straight.</p>
-        <a href="contact.html" class="btn btn--outline">Request a quote</a>
+      <article id="bookkeeping" class="py-stack-xl border-b-[0.5px] border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-3">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">01 / Bookkeeping</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-4">Bookkeeping</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-5">
+            <p class="font-body-lg text-body-lg text-on-surface mb-6">Day-to-day and monthly bookkeeping kept accurate and up to date. Bank reconciliations, categorisation, ledger maintenance, and clean month-end records ready for review.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to firms who want reliable books maintained without adding headcount, and to small businesses who'd rather a qualified CA kept things straight.</p>
+            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
+          </div>
+        </div>
       </article>
 
-      <article class="service-entry" id="vat">
-        <p class="service-entry__number">02</p>
-        <h2>VAT Return Preparation</h2>
-        <p>Preparation of VAT returns using MTD-compatible software, ready for your review and submission. Built to fit the UK's Making Tax Digital requirements.</p>
-        <p>Suited to practices that want the prep work handled so their team only has to review and file.</p>
-        <a href="contact.html" class="btn btn--outline">Request a quote</a>
+      <article id="vat" class="py-stack-xl border-b-[0.5px] border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-3">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">02 / Taxation</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-4">VAT Return Preparation</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-5">
+            <p class="font-body-lg text-body-lg text-on-surface mb-6">Preparation of VAT returns using MTD-compatible software, ready for your review and submission. Built to fit the UK's Making Tax Digital requirements.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to practices that want the prep work handled so their team only has to review and file.</p>
+            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
+          </div>
+        </div>
       </article>
 
-      <article class="service-entry" id="year-end">
-        <p class="service-entry__number">03</p>
-        <h2>Year-End Accounts Preparation</h2>
-        <p>Preparation of year-end accounts for sole traders and small companies — from trial balance to a clean set of accounts ready for your review and finalisation.</p>
-        <p>Suited to practices managing seasonal year-end load.</p>
-        <a href="contact.html" class="btn btn--outline">Request a quote</a>
+      <article id="year-end" class="py-stack-xl border-b-[0.5px] border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-3">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">03 / Reporting</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-4">Year-End Accounts Preparation</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-5">
+            <p class="font-body-lg text-body-lg text-on-surface mb-6">Preparation of year-end accounts for sole traders and small companies — from trial balance to a clean set of accounts ready for your review and finalisation.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to practices managing seasonal year-end load.</p>
+            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
+          </div>
+        </div>
       </article>
 
-      <article class="service-entry" id="management">
-        <p class="service-entry__number">04</p>
-        <h2>Management Reporting &amp; Payroll Support</h2>
-        <p>Monthly management accounts, and payroll support including PAYE, RTI submissions and payslips.</p>
-        <p>Suited to firms and businesses that want regular, reliable reporting they can rely on.</p>
-        <a href="contact.html" class="btn btn--outline">Request a quote</a>
+      <article id="management" class="py-stack-xl border-b-[0.5px] border-outline-variant">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-3">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">04 / Strategy</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-4">Management Reporting &amp; Payroll Support</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-5">
+            <p class="font-body-lg text-body-lg text-on-surface mb-6">Monthly management accounts, and payroll support including PAYE, RTI submissions and payslips.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Suited to firms and businesses that want regular, reliable reporting they can rely on.</p>
+            <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
+          </div>
+        </div>
       </article>
 
-      <article class="service-entry service-entry--controls" id="controls">
-        <p class="service-entry__number">05</p>
-        <h2>Controls &amp; SOX Support</h2>
-        <p>Internal controls and SOX/ICFR support for businesses with US-listed parents or group reporting obligations, and for UK/Ireland organisations preparing for the new board-level internal-controls declaration.</p>
-        <p>Backed by six years of hands-on SOX, ICFR, SOC and ISAE controls work at PwC and Deloitte across insurance, banking and industrial clients.</p>
-        <div style="display:flex; gap: var(--sp-2); flex-wrap: wrap; margin-top: var(--sp-2);">
-          <a href="controls-sox.html" class="btn btn--primary">See full detail</a>
-          <a href="contact.html" class="btn btn--outline">Request a quote</a>
+      <article id="controls" class="py-stack-xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div class="md:col-span-3">
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">05 / Governance</span>
+            <h2 class="font-headline-md text-headline-md text-primary mt-4">Controls &amp; SOX Support</h2>
+          </div>
+          <div class="md:col-span-7 md:col-start-5">
+            <p class="font-body-lg text-body-lg text-on-surface mb-6">Internal controls and SOX/ICFR support for businesses with US-listed parents or group reporting obligations, and for UK/Ireland organisations preparing for the new board-level internal-controls declaration.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-10">Backed by six years of hands-on SOX, ICFR, SOC and ISAE controls work at PwC and Deloitte across insurance, banking and industrial clients.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="controls-sox.html" class="inline-block bg-primary text-on-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-colors duration-300">See full detail</a>
+              <a href="contact.html" class="inline-block border-[0.5px] border-primary text-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-300">Request a quote</a>
+            </div>
+          </div>
         </div>
       </article>
 
     </div>
 
-    <section class="home-cta section">
-      <div class="container">
-        <h2>Not sure which service fits?</h2>
-        <p>Tell me what you need and I'll let you know how I can help.</p>
-        <a href="contact.html" class="btn btn--primary">Request a quote</a>
+    <!-- Closing CTA -->
+    <section class="bg-primary px-5 md:px-margin-desktop py-stack-xl">
+      <div class="max-w-container-max mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-stack-md">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-on-primary mb-4">Not sure which service fits?</h2>
+          <p class="font-body-lg text-body-lg text-on-primary/70">Tell me what you need and I'll let you know how I can help.</p>
+        </div>
+        <a href="contact.html" class="bg-secondary-container text-on-secondary-container px-12 py-5 font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-fixed-dim transition-colors duration-300 whitespace-nowrap flex-shrink-0">Request a quote</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span class="footer__name">Akansha Mathur, CA</span>
-      <ul class="footer__links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
+  <footer class="w-full border-t-[0.5px] border-outline-variant">
+    <div class="max-w-container-max mx-auto px-5 md:px-margin-desktop py-stack-md flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <span class="font-display-xl text-[15px] text-primary uppercase tracking-widest">AKANSHA MATHUR, <span class="text-secondary">CA</span></span>
+      <ul class="flex gap-8" role="list">
+        <li><a href="index.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a></li>
+        <li><a href="services.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Services</a></li>
+        <li><a href="contact.html" class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Contact</a></li>
       </ul>
-      <p class="footer__copy">&copy; 2025 Akansha Mathur. All rights reserved.</p>
+      <p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">© 2025 Akansha Mathur. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const closeDrawer = document.getElementById('close-drawer');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileDrawer.classList.remove('hidden');
+      setTimeout(() => mobileDrawer.classList.remove('opacity-0'), 10);
+    });
+    closeDrawer.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileDrawer.classList.add('opacity-0');
+      setTimeout(() => mobileDrawer.classList.add('hidden'), 500);
+    });
+  </script>
+
 </body>
 </html>
